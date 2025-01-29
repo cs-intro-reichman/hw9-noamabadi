@@ -54,9 +54,14 @@ public class LinkedList {
 			throw new IllegalArgumentException(
 					"index must be between 0 and size");
 		}
-		//// Replace the following statement with your code
-		return null;
+		Node temp = first;
+		for(int i = 0 ; i < index ; i ++) {
+			if(temp == null) return null;
+			temp = temp.next;
+		}
+		return temp;
 	}
+		
 	
 	/**
 	 * Creates a new Node object that points to the given memory block, 
@@ -100,7 +105,7 @@ public class LinkedList {
 	}
 
 		
-	}
+	
 
 	/**
 	 * Creates a new node that points to the given memory block, and adds it
