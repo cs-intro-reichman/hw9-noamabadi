@@ -164,15 +164,19 @@ public class LinkedList {
 	 *         if index is negative or greater than or equal to size
 	 */
 	public MemoryBlock getBlock(int index) {
-		if (index < 0 || index >= size) {
-			throw new IllegalArgumentException("Index must be between 0 and size");
+		if (index < 0 || index > size || first == null) {
+			throw new IllegalArgumentException(
+					"index must be between 0 and size");
 		}
-		Node check = first;
-		for (int i = 0; i < index; i++) {
-			check = check.next;
+		Node temp = first;
+		for(int i = 0 ; i < index ; i ++) {
+			temp = temp.next;
 		}
-		return check.block;
+		return temp.block;
 	}	
+
+
+	
 
 	/**
 	 * Gets the index of the node pointing to the given memory block.
